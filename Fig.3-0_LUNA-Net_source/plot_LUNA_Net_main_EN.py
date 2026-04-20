@@ -60,8 +60,9 @@ img_d = pdf_to_array(os.path.join(ROOT, 'Fig.3-4_IAF_arch_EN.pdf'))
 # ---------------------------------------------------------------------------
 FIG_W = 13.5          # total figure width in inches
 LEFT_FRAC = 0.51      # fraction of width for left column
-LABEL_Y_LEFT = -0.04  # y-offset for left-panel caption (in axes fraction)
-LABEL_Y_RIGHT = -0.05 # y-offset for right-panel captions (in axes fraction)
+LABEL_Y_LEFT = -0.04   # y-offset for left-panel caption (in axes fraction)
+LABEL_Y_RIGHT = -0.08  # y-offset for right-panel captions (in axes fraction)
+HSPACE_RIGHT = 0.22    # vertical gap between right panels (fraction of avg subplot height)
 
 w_L = FIG_W * LEFT_FRAC
 w_R = FIG_W * (1.0 - LEFT_FRAC)
@@ -103,7 +104,7 @@ ax_a.axis('off')
 inner = gridspec.GridSpecFromSubplotSpec(
     3, 1,
     subplot_spec=outer[0, 1],
-    hspace=0.08,
+    hspace=HSPACE_RIGHT,
     height_ratios=height_ratios,
 )
 
